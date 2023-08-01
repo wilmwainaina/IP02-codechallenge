@@ -1,15 +1,14 @@
 // src/App.js
 import React, { useState, useEffect } from 'react';
-import BotCollection from './components/BotCollection.JSX';
-import YourBotArmy from './components/YourBotArmy.jsx';
-import 'whatwg-fetch';
+import BotCollection from './BotCollection';
+import YourBotArmy from './YourBotArmy';
+
 
 const App = () => {
   const [bots, setBots] = useState([]);
   const [army, setArmy] = useState([]);
 
   useEffect(() => {
-    // Fetch data from the backend server
     fetch('http://localhost:3000/bots')
       .then((response) => response.json())
       .then((data) => setBots(data))
@@ -17,22 +16,17 @@ const App = () => {
   }, []);
 
   const handleEnlist = (bot) => {
-    // Add the bot to the army if it's not already enlisted
     if (!army.some((enlistedBot) => enlistedBot.id === bot.id)) {
       setArmy([...army, bot]);
     }
   };
 
   const handleDischarge = (bot) => {
-    // Remove the bot from the army
     setArmy(army.filter((enlistedBot) => enlistedBot.id !== bot.id));
   };
 
   const handleDischargeForever = (bot) => {
-    // Remove the bot from the army
     setArmy(army.filter((enlistedBot) => enlistedBot.id !== bot.id));
-
-    // Delete the bot from the backend
     fetch(`http://localhost:3000/bots/${bot.id}`, {
       method: 'DELETE',
     }).catch((error) => {
