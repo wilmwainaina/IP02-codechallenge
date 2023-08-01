@@ -1,4 +1,7 @@
 # IP02-codechallenge
+
+# bot army app
+
 it allows the user to;
  - See profiles of all bots rendered in `BotCollection`.
 - Add an individual bot to my army by clicking on it. The selected bot should
@@ -8,11 +11,12 @@ it allows the user to;
   `YourBotArmy` component.
 - Discharge a bot from their service forever, by clicking the red button marked
   "x", which would delete the bot both from the backend and from the
-  `YourBotArmy` on the frontend.
+  `YourBotArmy` on the front.
 
 
- # table of content
+ # Table of content
   .project structure
+  .deployment link
   .getting started
   .start application
   .side notes
@@ -24,6 +28,9 @@ main.jsx
 Bot.jsx
 BotCollection.jsx
 YourBotArmy.jsx
+
+#deployment link
+https://wilmwainaina.github.io/IP02-codechallenge/
 
 # getting started
 1.Clone the repository :git clone https://github.com/wilmwainaina/IP02-codechallenge
